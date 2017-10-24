@@ -1,5 +1,6 @@
 {
-  "name": "github-mobile",
+  "name": "github-explore",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {}
 }
