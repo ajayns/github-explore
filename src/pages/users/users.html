@@ -3,7 +3,7 @@
     <ion-title>Github Explore</ion-title>    
   </ion-navbar>
   <ion-toolbar color="github">
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar (ionInput)="search($event)" [(ngModel)]="searchTerm"></ion-searchbar>
   </ion-toolbar>  
 </ion-header>
 

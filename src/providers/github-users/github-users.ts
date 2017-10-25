@@ -19,5 +19,10 @@ export class GithubUsersProvider {
       .map(res => <User[]>res.json());
   }
 
+  // Search for a specific user
+  search(searchTerm: string): Observable<User[]> {
+    return this.http.get(`${this.githubApi}/search/users?q=${searchTerm}`)
+      .map(res => <User[]>res.json().items);
+  }
 
 }
