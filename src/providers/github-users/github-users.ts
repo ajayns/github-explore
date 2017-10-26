@@ -22,7 +22,7 @@ export class GithubUsersProvider {
   // Return user details
   loadUser(userName: string): Observable<User> {
     return this.http.get(`${this.githubApi}/users/${userName}`)
-      .map(res => <User>res.json().items);
+      .map(res => <User>res.json());
   }
 
   // Search for a specific user
