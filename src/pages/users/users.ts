@@ -25,10 +25,12 @@ export class UsersPage {
     })
   }
 
+  // Go to user details page
   goToUser(userName: string) {
     this.navCtrl.push(UserDetailsPage,{userName});
   }
 
+  // Search for users
   search(event) {
     if(this.searchTerm.trim() === '') {
       this.users = this.usersBkp;
