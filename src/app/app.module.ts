@@ -9,6 +9,7 @@ import { OrgsPage } from '../pages/orgs/orgs';
 import { ReposPage } from '../pages/repos/repos';
 import { UsersPage } from '../pages/users/users';
 import { TabsPage } from '../pages/tabs/tabs';
+import { UserDetailsPage } from '../pages/user-details/user-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +21,8 @@ import { GithubUsersProvider } from '../providers/github-users/github-users';
     OrgsPage,
     ReposPage,
     UsersPage,
-    TabsPage
+    TabsPage,
+    UserDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { GithubUsersProvider } from '../providers/github-users/github-users';
     OrgsPage,
     ReposPage,
     UsersPage,
-    TabsPage
+    TabsPage,
+    UserDetailsPage
   ],
   providers: [
     StatusBar,
