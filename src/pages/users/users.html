@@ -7,11 +7,9 @@
   </ion-toolbar>  
 </ion-header>
 
-<ion-content padding>
-  
-  <ion-list>
-   
-    <button ion-item *ngFor="let user of users">
+<ion-content padding>  
+  <ion-list>   
+    <button ion-item *ngFor="let user of users" (click)="goToUser(user.login)">
       <ion-thumbnail item-start>
         <img [src]="user.avatar_url">
       </ion-thumbnail>
