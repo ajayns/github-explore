@@ -11,7 +11,7 @@
     <ion-card-content>
       <p>
         {{user?.name}}
-        <span float-right>
+        <span float-right *ngIf="user?.location">
           <ion-icon name="pin"></ion-icon>
           {{user?.location}}
         </span>
@@ -35,15 +35,15 @@
   </ion-card>
 
   <ion-list padding>
-    <button ion-item>
-      Stars
-      <ion-icon name="arrow-dropright" item-right></ion-icon>
-    </button>
     <button ion-item *ngIf="user?.public_repos">
       Repositories
       <ion-badge>{{user?.public_repos}}</ion-badge>
       <ion-icon name="arrow-dropright" item-right></ion-icon>
     </button>
+    <button ion-item>
+        Stars
+        <ion-icon name="arrow-dropright" item-right></ion-icon>
+      </button>
     <button ion-item *ngIf="user?.gists">
       Gists
       <ion-badge>{{user?.gists}}</ion-badge>
