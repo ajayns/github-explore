@@ -17,7 +17,7 @@ export class UsersPage {
   usersBkp: User[];
   searchTerm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsersProvider: GithubUsersProvider, private popoverController: PopoverController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsersProvider: GithubUsersProvider, private popoverCtrl: PopoverController) {
     
     // Store users data from api to users
     githubUsersProvider.load().subscribe(users => {
@@ -42,9 +42,9 @@ export class UsersPage {
     }
   }
 
-  presentPopover(e) {
-    let popover = this.popoverController.create(PopoverMenuComponent);
-    popover.present();
+  presentPopover(ev) {
+    let popover = this.popoverCtrl.create(PopoverMenuComponent);
+    popover.present({ev});
   }
 
 }

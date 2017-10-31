@@ -6,11 +6,7 @@ import { Component } from '@angular/core';
 })
 export class PopoverMenuComponent {
 
-  text: string;
-
   constructor() {
-    console.log('Hello PopoverMenuComponent Component');
-    this.text = 'Hello World';
   }
 
 }
