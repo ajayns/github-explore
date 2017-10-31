@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Repo } from '../../models/repo';
 import { GithubReposProvider } from '../../providers/github-repos/github-repos';
 
+import { RepoDetailsPage } from '../repo-details/repo-details';
+
 
 @IonicPage()
 @Component({
@@ -19,6 +21,10 @@ export class ReposPage {
     githubReposProvider.load().subscribe(repos => {
       this.repos = repos;
     })
+  }
+
+  goToRepo(repoName: string) {
+    this.navCtrl.push(RepoDetailsPage, {repoName});
   }
 
 
