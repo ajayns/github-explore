@@ -1,8 +1,21 @@
 <ion-header>
   <ion-navbar color="github">
-    <ion-title>Github Explore</ion-title>
+    <ion-title>Github Explore</ion-title>    
   </ion-navbar>
+  <ion-toolbar color="github">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>  
 </ion-header>
 
-<ion-content padding>
+<ion-content padding>  
+  <ion-list>   
+    <button ion-item *ngFor="let repo of repos" >
+      <ion-thumbnail item-start>
+        <img [src]="">
+      </ion-thumbnail>
+      <h2>{{ repo.name }}</h2>
+      <p>{{ repo.description }}</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </button>
+  </ion-list>
 </ion-content>
