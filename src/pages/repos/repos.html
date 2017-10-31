@@ -11,7 +11,7 @@
   <ion-list>   
     <button ion-item *ngFor="let repo of repos" >
       <ion-thumbnail item-start>
-        <img [src]="">
+        <img [src]="repo.owner.avatar_url">
       </ion-thumbnail>
       <h2>{{ repo.name }}</h2>
       <p>{{ repo.description }}</p>
