@@ -12,6 +12,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { UserDetailsPage } from '../pages/user-details/user-details';
 import { RepoDetailsPage } from '../pages/repo-details/repo-details';
 
+import { PopoverMenuComponent } from '../components/popover-menu/popover-menu'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GithubUsersProvider } from '../providers/github-users/github-users';
@@ -25,7 +27,8 @@ import { GithubReposProvider } from '../providers/github-repos/github-repos';
     UsersPage,
     TabsPage,
     UserDetailsPage,
-    RepoDetailsPage
+    RepoDetailsPage,
+    PopoverMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { GithubReposProvider } from '../providers/github-repos/github-repos';
     UsersPage,
     TabsPage,
     UserDetailsPage,
-    RepoDetailsPage
+    RepoDetailsPage,
+    PopoverMenuComponent
   ],
   providers: [
     StatusBar,

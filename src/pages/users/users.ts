@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, PopoverController, NavController, NavParams } from 'ionic-angular';
 
 import { User } from '../../models/user';
 import { GithubUsersProvider } from '../../providers/github-users/github-users';
 
-import { UserDetailsPage } from '../user-details/user-details';
+import { UserDetailsPage } from '../user-details/user-details'; 
+import { PopoverMenuComponent } from '../../components/popover-menu/popover-menu';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class UsersPage {
   usersBkp: User[];
   searchTerm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsersProvider: GithubUsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsersProvider: GithubUsersProvider, private popoverController: PopoverController) {
     
     // Store users data from api to users
     githubUsersProvider.load().subscribe(users => {
@@ -39,6 +40,11 @@ export class UsersPage {
         this.users = users;
       })
     }
+  }
+
+  presentPopover(e) {
+    let popover = this.popoverController.create(PopoverMenuComponent);
+    popover.present();
   }
 
 }
