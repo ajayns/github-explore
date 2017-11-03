@@ -19,4 +19,9 @@ export class GithubReposProvider {
         .map(res => <Repo[]>res.json());
     }
 
+    loadRepo(repoUrl: string): Observable<Repo> {
+      return this.http.get(repoUrl)
+        .map(res => <Repo>res.json());
+    }
+
 }

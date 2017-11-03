@@ -9,7 +9,7 @@
 
 <ion-content padding>  
   <ion-list>   
-    <button ion-item *ngFor="let repo of repos" (click)="goToRepo(repo.full_name)">
+    <button ion-item *ngFor="let repo of repos" (click)="goToRepo(repo.url)">
       <ion-thumbnail item-start>
         <img [src]="repo.owner.avatar_url">
       </ion-thumbnail>

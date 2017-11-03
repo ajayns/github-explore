@@ -23,8 +23,8 @@ export class ReposPage {
     })
   }
 
-  goToRepo(repoName: string) {
-    this.navCtrl.push(RepoDetailsPage, {repoName});
+  goToRepo(repoUrl: string) {
+    this.navCtrl.push(RepoDetailsPage, {repoUrl});
   }
 
 
