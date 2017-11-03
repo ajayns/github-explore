@@ -1,3 +1,28 @@
 page-repo-details {
+  ion-card-title {
+    font-weight: 500;
+    display: inline-block !important;
+  }
 
+  .card-background-page {
+    position: relative;
+    text-align: center;
+    text-shadow: 0px 0px 5px color($colors, gray-dark);
+    
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+  }
 }
