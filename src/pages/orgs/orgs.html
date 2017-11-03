@@ -2,8 +2,20 @@
   <ion-navbar color="github">
     <ion-title>Github Explore</ion-title>
   </ion-navbar>
+  <ion-toolbar color="github">
+    <ion-searchbar (ionInput)="search($event)" [(ngModel)]="searchTerm"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  Build under progress.
+  <ion-list>
+    <button ion-item *ngFor="let org of orgs" (click)="goToOrg(org.url)">
+      <ion-thumbnail item-start>
+        <img [src]="org.avatar_url">
+      </ion-thumbnail>
+      <h2>{{ org.login }}</h2>
+      <p>{{ org.description }}</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </button>
+  </ion-list>
 </ion-content>
