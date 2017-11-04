@@ -1,6 +1,6 @@
 {
   "name": "github-explore",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "author": "Ajay NS",
   "homepage": "https://github.com/ajayns/",
   "private": true,
@@ -34,5 +34,5 @@
     "@ionic/app-scripts": "3.0.1",
     "typescript": "2.3.4"
   },
-  "description": "Explore Github projects, people and organisations"
+  "description": "Explore Github projects, people and organizations"
 }
