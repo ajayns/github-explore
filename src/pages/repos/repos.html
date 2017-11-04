@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar color="github">
-    <ion-title>Github Explore</ion-title>    
+    <ion-title>Github Explore</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
   <ion-toolbar color="github">
     <ion-searchbar (ionInput)="search($event)" [(ngModel)]="searchTerm"></ion-searchbar>

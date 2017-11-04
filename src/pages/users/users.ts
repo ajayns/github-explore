@@ -42,6 +42,7 @@ export class UsersPage {
     }
   }
 
+  // Popover control
   presentPopover(ev) {
     let popover = this.popoverCtrl.create(PopoverMenuComponent);
     popover.present({ev});

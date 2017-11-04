@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, PopoverController, NavController, NavParams } from 'ionic-angular';
 
 import { Org } from '../../models/org';
 import { GithubOrgsProvider } from '../../providers/github-orgs/github-orgs';
 
 import { OrgDetailsPage } from '../org-details/org-details';
-
+import { PopoverMenuComponent } from '../../components/popover-menu/popover-menu';
 
 @IonicPage()
 @Component({
@@ -17,7 +17,7 @@ export class OrgsPage {
   orgsBkp: Org[];
   searchTerm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private githubOrgsProvider: GithubOrgsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private githubOrgsProvider: GithubOrgsProvider, private popoverCtrl: PopoverController) {
     
     //Load organizations from api
     githubOrgsProvider.load().subscribe(orgs => {
@@ -40,6 +40,12 @@ export class OrgsPage {
         this.orgs = orgs;
       })
     }
+  }
+
+  // Popover control
+  presentPopover(ev) {
+    let popover = this.popoverCtrl.create(PopoverMenuComponent);
+    popover.present({ ev });
   }
 
 }

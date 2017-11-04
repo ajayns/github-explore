@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, PopoverController, NavController, NavParams } from 'ionic-angular';
 
 import { Repo } from '../../models/repo';
 import { GithubReposProvider } from '../../providers/github-repos/github-repos';
 
 import { RepoDetailsPage } from '../repo-details/repo-details';
-
+import { PopoverMenuComponent } from '../../components/popover-menu/popover-menu';
 
 @IonicPage()
 @Component({
@@ -17,7 +17,7 @@ export class ReposPage {
   reposBkp: Repo[];
   searchTerm: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private githubReposProvider: GithubReposProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private githubReposProvider: GithubReposProvider, private popoverCtrl: PopoverController) {
 
     // Store repos data from api
     githubReposProvider.load().subscribe(repos => {
@@ -42,5 +42,10 @@ export class ReposPage {
     }
   }
 
+  // Popover control
+  presentPopover(ev) {
+    let popover = this.popoverCtrl.create(PopoverMenuComponent);
+    popover.present({ ev });
+  }
 
 }
