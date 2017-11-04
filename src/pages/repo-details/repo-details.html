@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="github">
     <ion-title>Repository Details</ion-title>
@@ -7,37 +6,38 @@
 
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
-      {{repo?.owner.login}}/
-      <ion-card-title no-padding padding-bottom>{{repo?.name}}</ion-card-title>
-      
-      <ion-row padding text-center>
-        <ion-col>
-          Watching
-          <ion-badge>{{repo?.subscribers_count}}</ion-badge>
-        </ion-col>
-        <ion-col>
-          Stars
-          <ion-badge>{{repo?.stargazers_count}}</ion-badge>
-        </ion-col>
-        <ion-col>
-          Forks
-          <ion-badge>{{repo?.forks}}</ion-badge>
-        </ion-col> 
-      </ion-row>
-      
-      <p padding-top>
-        {{repo?.description}}
-      </p>
-      <a>{{repo?.homepage}}</a>
-    </ion-card-content>
-  </ion-card>
+  <div *ngIf="repo">
+    <ion-card>
+      <ion-card-content>
+        {{repo?.owner.login}}/
+        <ion-card-title no-padding padding-bottom>{{repo?.name}}</ion-card-title>
 
-  <ion-card class="card-background-page">
-    <img [src]="repo?.owner.avatar_url" alt="">
-    <div class="card-title">{{repo?.owner.login}}</div>
-    <div class="card-subtitle">Browse more repositories</div>
-  </ion-card>
+        <ion-row padding text-center>
+          <ion-col>
+            Watching
+            <ion-badge>{{repo?.subscribers_count}}</ion-badge>
+          </ion-col>
+          <ion-col>
+            Stars
+            <ion-badge>{{repo?.stargazers_count}}</ion-badge>
+          </ion-col>
+          <ion-col>
+            Forks
+            <ion-badge>{{repo?.forks}}</ion-badge>
+          </ion-col>
+        </ion-row>
 
+        <p padding-top>
+          {{repo?.description}}
+        </p>
+        <a>{{repo?.homepage}}</a>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-background-page">
+      <img [src]="repo?.owner.avatar_url" alt="">
+      <div class="card-title">{{repo?.owner.login}}</div>
+      <div class="card-subtitle">Browse more repositories</div>
+    </ion-card>
+  </div>
 </ion-content>
