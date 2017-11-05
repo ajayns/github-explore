@@ -1,10 +1,11 @@
 # Github Explore 
 
-![Screenshot 1](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1.png)
-![Screenshot 2](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2.png)
-![Screenshot 3](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1_ios.png)
-![Screenshot 4](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2_ios.png)
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1.png" width="350"/>
+  <img src="https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2.png" width="350"/>
+  <img src="https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1_ios.png" width="350"/>
+  <img src="https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2_ios.png" width="350"/>
+</p>
 
 [WIP]
 
