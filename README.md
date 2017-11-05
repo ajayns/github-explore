@@ -1,6 +1,14 @@
-# Github Explore [WIP]
+# Github Explore 
 
-A cross platform app built on Ionic which allows you to explore and checkout users, repositories and organizations. Uses Github API v3
+![Screenshot 1](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1.png)
+![Screenshot 2](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2.png)
+![Screenshot 3](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/1_ios.png)
+![Screenshot 4](https://raw.githubusercontent.com/ajayns/github-explore/master/screenshots/2_ios.png)
+
+
+[WIP]
+
+A cross platform app built on Ionic which allows you to explore and checkout users, repositories and organizations.
 
 
 ## Setup
@@ -20,4 +28,5 @@ Serve the app to browser
 ionic serve
 ```
 
-Currently the APIs are hardcoded to run on localhost:3000. For dev purposed and using multiple APIs this port can be changed as per requirement. 
+## Tech Stack
+Uses the Github v3 REST API for data, Ionic 3 with Angular 4 as the frontend.
