@@ -18,9 +18,9 @@
   </div>
   <ion-list *ngIf="contentLoaded">   
     <button ion-item *ngFor="let repo of repos" (click)="goToRepo(repo.url)">
-      <ion-thumbnail item-start>
+      <ion-avatar item-start>
         <img [src]="repo.owner.avatar_url">
-      </ion-thumbnail>
+      </ion-avatar>
       <h2>{{ repo.name }}</h2>
       <p>{{ repo.description }}</p>
       <ion-icon name="arrow-forward" item-right></ion-icon>

@@ -15,9 +15,9 @@
 <ion-content padding>
   <ion-list>
     <button ion-item *ngFor="let org of orgs" (click)="goToOrg(org.url)">
-      <ion-thumbnail item-start>
+      <ion-avatar item-start>
         <img [src]="org.avatar_url">
-      </ion-thumbnail>
+      </ion-avatar>
       <h2>{{ org.login }}</h2>
       <p>{{ org.description }}</p>
       <ion-icon name="arrow-forward" item-right></ion-icon>

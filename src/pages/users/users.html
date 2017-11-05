@@ -18,9 +18,9 @@
   </div>  
   <ion-list *ngIf="contentLoaded">
     <button ion-item *ngFor="let user of users" (click)="goToUser(user.login)">
-      <ion-thumbnail item-start>
+      <ion-avatar item-start>
         <img [src]="user.avatar_url">
-      </ion-thumbnail>
+      </ion-avatar>
       <h2>{{ user.login }}</h2>
       <ion-icon name="arrow-forward" item-right></ion-icon>
     </button>
