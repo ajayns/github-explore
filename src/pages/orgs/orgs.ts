@@ -16,13 +16,16 @@ export class OrgsPage {
   orgs: Org[];
   orgsBkp: Org[];
   searchTerm: string;
+  contentLoaded: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private githubOrgsProvider: GithubOrgsProvider, private popoverCtrl: PopoverController) {
+    this.contentLoaded = false;
     
     //Load organizations from api
     githubOrgsProvider.load().subscribe(orgs => {
       this.orgs = orgs;
       this.orgsBkp = orgs;
+      this.contentLoaded = true;
     })
   }
 
@@ -36,8 +39,10 @@ export class OrgsPage {
     if (this.searchTerm.trim() === '') {
       this.orgs = this.orgsBkp;
     } else {
+      this.contentLoaded = false;
       this.githubOrgsProvider.search(this.searchTerm).subscribe(orgs => {
         this.orgs = orgs;
+        this.contentLoaded = true;
       })
     }
   }

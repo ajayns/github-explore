@@ -6,6 +6,9 @@
 
 
 <ion-content>
+  <div class="absolute-center" *ngIf="!user">
+    <ion-spinner></ion-spinner>
+  </div>
   <div *ngIf="user">
     <ion-card>
       <img [src]="user?.avatar_url">

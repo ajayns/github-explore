@@ -6,6 +6,10 @@
 
 
 <ion-content>
+  <div class="absolute-center" *ngIf="!repo">
+    <ion-spinner></ion-spinner>
+  </div>
+
   <div *ngIf="repo">
     <ion-card>
       <ion-card-content>

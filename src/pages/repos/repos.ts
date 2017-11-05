@@ -16,13 +16,16 @@ export class ReposPage {
   repos: Repo[];
   reposBkp: Repo[];
   searchTerm: string;
+  contentLoaded: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private githubReposProvider: GithubReposProvider, private popoverCtrl: PopoverController) {
+    this.contentLoaded = false;
 
     // Store repos data from api
     githubReposProvider.load().subscribe(repos => {
       this.repos = repos;
       this.reposBkp = repos;
+      this.contentLoaded = true;
     })
   }
 
@@ -36,8 +39,10 @@ export class ReposPage {
     if (this.searchTerm.trim() === '') {
       this.repos = this.reposBkp;
     } else {
+      this.contentLoaded = false;
       this.githubReposProvider.search(this.searchTerm).subscribe(repos => {
         this.repos = repos;
+        this.contentLoaded = true;
       })
     }
   }

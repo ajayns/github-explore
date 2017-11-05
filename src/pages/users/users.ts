@@ -16,13 +16,16 @@ export class UsersPage {
   users: User[];
   usersBkp: User[];
   searchTerm: string;
+  contentLoaded: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsersProvider: GithubUsersProvider, private popoverCtrl: PopoverController) {
+    this.contentLoaded = false;
     
     // Store users data from api to users
     githubUsersProvider.load().subscribe(users => {
       this.users = users;
       this.usersBkp = users;
+      this.contentLoaded = true;
     })
   }
 
@@ -36,8 +39,10 @@ export class UsersPage {
     if(this.searchTerm.trim() === '') {
       this.users = this.usersBkp;
     } else {
+      this.contentLoaded = false;
       this.githubUsersProvider.search(this.searchTerm).subscribe(users => {
         this.users = users;
+        this.contentLoaded = true;
       })
     }
   }
